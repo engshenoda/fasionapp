@@ -6,9 +6,23 @@ class SplashScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-	  body: Center(
-		child: const Text('Splash Screen'),
-	  ),
-	);
+      body: Column(
+        children: [
+          const Center(child: Text('Splash Screen')),
+          ElevatedButton(
+            onPressed: () {
+              Navigator.pushNamed(context, '/login');
+            },
+            child: const Text('Go to Login'),
+          ),
+          ElevatedButton(
+            onPressed: () {
+              Navigator.pushNamed(context, '/home');
+            },
+            child: const Text('Go to Home'),
+          ),
+        ],
+      ),
+    );
   }
 }
